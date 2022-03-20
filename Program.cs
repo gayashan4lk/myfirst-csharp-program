@@ -1,11 +1,13 @@
 ﻿using System;
+using MyUtilities;
 
 namespace MyFirstProgram
 {
-    class Program
+    class CheckComfort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WeatherUtilities.Report("Colombo", 30, 85);
         }
+    }
 }
