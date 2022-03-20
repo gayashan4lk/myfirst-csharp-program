@@ -6,26 +6,25 @@ namespace MyUtilities
     {
         static float FahrenheitToCelsius(float tempFahrenheit)
         {
-            var tempCelsius = tempFahrenheit - 32 / 1.8f;
-            return tempCelsius;
+            return (float)(tempFahrenheit - 32 / 1.8f);
         }
 
         static float CelciusToFahrenheit(float tempCelcius)
         {
-            var tempFahrenheit = tempCelcius * 1.8f + 32;
-            return tempFahrenheit;
+            return (float)(tempCelcius * 1.8f + 32);
         }
 
+        // The higher the index, the lower the comfort.
         static float ComfortIndex(float tempFahrenheit, float humidityPercent)
         {
-            var comfortIndex = (tempFahrenheit + humidityPercent) / 4;
-            return comfortIndex;
+            // Probably not a very reliable formula
+            return (tempFahrenheit + humidityPercent) / 4;
         }
 
         static void Report(string location, float tempCelsius, float humidity)
         {
             var tempFahrenheit = CelciusToFahrenheit(tempCelsius);
-            Console.WriteLine("Confort Index for " + location + " : " + ComfortIndex(tempFahrenheit, humidity));
+            Console.WriteLine($"Confort Index for {location} : {ComfortIndex(tempFahrenheit, humidity)}");
         }
     }
 }
